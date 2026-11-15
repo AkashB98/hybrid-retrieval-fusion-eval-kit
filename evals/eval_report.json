@@ -1,0 +1,157 @@
+{
+  "k": 5,
+  "methods_summary": {
+    "bm25": {
+      "bridge_support_at_k": 0.3333,
+      "by_class": {
+        "multi_hop_bridge": {
+          "bridge_support_at_k": 0.0,
+          "queries": 10,
+          "recall_at_k": 0.5
+        },
+        "named_entity": {
+          "bridge_support_at_k": 1.0,
+          "queries": 10,
+          "recall_at_k": 1.0
+        },
+        "paraphrase": {
+          "bridge_support_at_k": 0.0,
+          "queries": 10,
+          "recall_at_k": 0.0
+        }
+      },
+      "recall_at_k": 0.5
+    },
+    "router": {
+      "bridge_support_at_k": 0.6667,
+      "by_class": {
+        "multi_hop_bridge": {
+          "bridge_support_at_k": 0.0,
+          "queries": 10,
+          "recall_at_k": 0.5
+        },
+        "named_entity": {
+          "bridge_support_at_k": 1.0,
+          "queries": 10,
+          "recall_at_k": 1.0
+        },
+        "paraphrase": {
+          "bridge_support_at_k": 1.0,
+          "queries": 10,
+          "recall_at_k": 1.0
+        }
+      },
+      "recall_at_k": 0.8333
+    },
+    "rrf_hybrid": {
+      "bridge_support_at_k": 1.0,
+      "by_class": {
+        "multi_hop_bridge": {
+          "bridge_support_at_k": 1.0,
+          "queries": 10,
+          "recall_at_k": 1.0
+        },
+        "named_entity": {
+          "bridge_support_at_k": 1.0,
+          "queries": 10,
+          "recall_at_k": 1.0
+        },
+        "paraphrase": {
+          "bridge_support_at_k": 1.0,
+          "queries": 10,
+          "recall_at_k": 1.0
+        }
+      },
+      "recall_at_k": 1.0
+    },
+    "tfidf_expanded": {
+      "bridge_support_at_k": 1.0,
+      "by_class": {
+        "multi_hop_bridge": {
+          "bridge_support_at_k": 1.0,
+          "queries": 10,
+          "recall_at_k": 1.0
+        },
+        "named_entity": {
+          "bridge_support_at_k": 1.0,
+          "queries": 10,
+          "recall_at_k": 1.0
+        },
+        "paraphrase": {
+          "bridge_support_at_k": 1.0,
+          "queries": 10,
+          "recall_at_k": 1.0
+        }
+      },
+      "recall_at_k": 1.0
+    }
+  },
+  "passed": 12,
+  "results": [
+    {
+      "detail": "{'documents': 50, 'queries': 30, 'queries_by_class': {'named_entity': 10, 'paraphrase': 10, 'multi_hop_bridge': 10}}",
+      "eval": "E1_corpus_shape",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "eval": "E2_all_methods_computed",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "eval": "E3_rrf_and_router_both_reported",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "eval": "E4_metrics_in_range",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "eval": "E5_determinism",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "eval": "E6_router_overfires_on_bridge_queries",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "eval": "E7_bridge_queries_have_two_relevant",
+      "pass": true
+    },
+    {
+      "detail": "recall=0.5 bridge=0.3333",
+      "eval": "E8_bm25_headline",
+      "pass": true
+    },
+    {
+      "detail": "recall=1.0 bridge=1.0",
+      "eval": "E9_expanded_headline",
+      "pass": true
+    },
+    {
+      "detail": "recall=1.0 bridge=1.0",
+      "eval": "E10_rrf_headline",
+      "pass": true
+    },
+    {
+      "detail": "recall=0.8333 bridge=0.6667",
+      "eval": "E11_router_headline",
+      "pass": true
+    },
+    {
+      "detail": "rrf bridge_support=1.0 vs router bridge_support=0.0 on multi_hop_bridge",
+      "eval": "E12_bridge_class_gap_rrf_vs_router",
+      "pass": true
+    }
+  ],
+  "total": 12,
+  "winner": {
+    "by_bridge_support_at_k": "rrf_hybrid",
+    "by_recall_at_k": "rrf_hybrid"
+  }
+}
